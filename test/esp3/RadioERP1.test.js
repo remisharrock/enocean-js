@@ -244,5 +244,13 @@ describe('RadioERP1 packets', () => {
       assert.equal(decoded.CH3.value, 1.8)
       // console.log(setValueFieldName(50, 'a5-38-08', 'EDIM', ByteArray.from([0, 0, 0, 0]), 2))
     })
+    it('d2-01-00', () => {
+      radio = RadioERP1.from('55000807013dd20600ff81538a0003ffffffffff009d')
+      decoded = radio.decode('d2-01-00')
+      console.log(decoded)
+      assert.equal(decoded.qu.rawValue, 1)
+
+      // console.log(setValueFieldName(50, 'a5-38-08', 'EDIM', ByteArray.from([0, 0, 0, 0]), 2))
+    })
   })
 })
